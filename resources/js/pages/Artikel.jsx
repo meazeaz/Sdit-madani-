@@ -6,6 +6,7 @@ import artikel2 from "../assets/event2.jpg";
 import artikel3 from "../assets/course2.jpg";
 import artikel4 from "../assets/dzikir.jpg";
 import artikel5 from "../assets/event.jpg";
+
 import { useNavigate } from "react-router-dom";
 
 // Intersection observer animasi
@@ -26,14 +27,16 @@ function useSectionInView(options = {}) {
   return [ref, visible];
 }
 
-// Card artikel animasi
-function ArtikelCard({ data, delay = 0 }) {
+// Card artikel animasi (hanya satu deklarasi)
+function ArtikelCard({ data, delay = 0, kategoriKey }) {
   const [ref, visible] = useSectionInView();
   return (
     <div
       ref={ref}
-      className={`relative group bg-white rounded-2xl shadow-lg border border-[#e0eae2] overflow-hidden transition-all duration-800 
-                  ${visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-7 scale-95"}`}
+      key={kategoriKey + data.title}
+      className={`relative group bg-white rounded-2xl shadow-lg border border-[#e0eae2] overflow-hidden transition-all duration-700
+        ${visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-7 scale-95"}
+        hover:scale-105 hover:shadow-2xl hover:border-[#019164]`}
       style={{ animationDelay: `${delay}s` }}
     >
       <div className="relative">
@@ -64,7 +67,7 @@ function ArtikelCard({ data, delay = 0 }) {
   );
 }
 
-// Dummy data artikel contoh
+// Dummy data artikel contoh (tambahkan gambar baru)  
 const dataArtikel = [
   {
     image: artikel1,
@@ -111,10 +114,33 @@ const dataArtikel = [
     date: "27 Juni 2025",
     onRead: () => window.alert("Baca artikel 5 (simulasi)"),
   },
+  
+];
+
+// Kategori unik
+const kategoriList = [
+  { label: "Semua", value: "all", color: "bg-[#e5f7eb]", text: "text-[#019164]" },
+  { label: "Pendidikan", value: "Pendidikan", color: "bg-[#fff7e1]", text: "text-[#d88f11]" },
+  { label: "Kegiatan", value: "Kegiatan", color: "bg-[#e5edff]", text: "text-[#1e5ad7]" },
+  { label: "Prestasi", value: "Prestasi", color: "bg-[#fff2f6]", text: "text-[#e9327a]" },
+  { label: "Inspirasi", value: "Inspirasi", color: "bg-[#edfff8]", text: "text-[#15bf91]" },
+  { label: "Parenting", value: "Parenting", color: "bg-[#fcf2ed]", text: "text-[#d88211]" },
 ];
 
 export default function Artikel() {
   const navigate = useNavigate();
+  const [kategori, setKategori] = useState("all");
+  const [kategoriKey, setKategoriKey] = useState("all");
+
+  // Saat kategori berubah, ganti key agar card animasi ulang
+  useEffect(() => {
+    setKategoriKey(kategori + "-" + Date.now());
+  }, [kategori]);
+
+  // Filter artikel sesuai kategori
+  const artikelFiltered = kategori === "all"
+    ? dataArtikel
+    : dataArtikel.filter(a => a.category === kategori);
 
   return (
     <div className="bg-gradient-to-b from-[#fafdff] to-[#f9fafb] min-h-screen">
@@ -144,19 +170,35 @@ export default function Artikel() {
       </section>
 
       {/* Kategori filter */}
-      <section className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-8 mt-8 sm:mt-10 animate-sectionIn">
-        <button className="bg-[#e5f7eb] text-[#019164] rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm hover:bg-[#d1f7e0] transition-all">Semua</button>
-        <button className="bg-[#fff7e1] text-[#d88f11] rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm hover:bg-[#ffefc2] transition-all">Pendidikan</button>
-        <button className="bg-[#e5edff] text-[#1e5ad7] rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm hover:bg-[#d5e6ff] transition-all">Kegiatan</button>
-        <button className="bg-[#fff2f6] text-[#e9327a] rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm hover:bg-[#ffdbe8] transition-all">Prestasi</button>
-        <button className="bg-[#edfff8] text-[#15bf91] rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm hover:bg-[#d6fff1] transition-all">Inspirasi</button>
-        <button className="bg-[#fcf2ed] text-[#d88211] rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm hover:bg-[#ffe4c9] transition-all">Parenting</button>
+      <section className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-8 mt-8 sm:mt-10 animate-sectionIn justify-center">
+        {kategoriList.map((kat, idx) => (
+          <button
+            key={kat.value}
+            className={`rounded-full px-4 py-2 text-xs sm:text-base font-semibold shadow-sm transition-all duration-200 border-2
+              ${kat.color} ${kat.text}
+              ${kategori === kat.value ? "border-[#019164] scale-105 shadow-lg" : "border-transparent"}
+              hover:scale-105 hover:brightness-110`}
+            onClick={() => setKategori(kat.value)}
+          >
+            {kat.label}
+          </button>
+        ))}
       </section>
 
       {/* Daftar Artikel */}
       <section className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-8 mb-10 animate-sectionIn">
-        {dataArtikel.map((item, idx) =>
-          <ArtikelCard key={idx} data={item} delay={0.10 + idx*0.13} />
+        {artikelFiltered.map((item, idx) =>
+          <ArtikelCard
+            key={kategoriKey + item.title}
+            data={item}
+            delay={0.10 + idx * 0.13}
+            kategoriKey={kategoriKey}
+          />
+        )}
+        {artikelFiltered.length === 0 && (
+          <div className="col-span-2 text-center text-gray-500 py-12 font-semibold text-lg">
+            Tidak ada artikel pada kategori ini.
+          </div>
         )}
       </section>
 

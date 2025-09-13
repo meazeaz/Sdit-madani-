@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import profileImg from "../assets/poto.png";
+import profileImg from "../assets/poto1.png";
 import bgImage from "../assets/bg.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrophy } from "@fortawesome/free-solid-svg-icons";
@@ -195,14 +195,16 @@ export default function Hero() {
         </div>
 
 
-        {/* Right: Image with circular background */}
-        <div className="relative w-full md:w-1/2 h-[40vh] md:h-full flex items-end justify-center mb-8 md:mb-0">
-          {/* Glowing circular background */}
-          <div className="absolute right-0 bottom-0 w-[40vh] h-[40vh] md:w-[70vh] md:h-[70vh] bg-[#FFA673] rounded-full opacity-60 transform translate-x-1/4 translate-y-[1vh] filter blur-[80px] md:blur-[100px] md:mr-40"></div>
+        
+        {/* Right: Image with circular background - MODIFIED VERSION */}
+        <div className="relative w-full md:w-1/2 h-[40vh] md:h-full flex items-end justify-center mb-8 md:mb-0 pt-12 md:pt-20"> {/* Added pt-12 untuk padding top */}
+          
+          {/* Glowing circular background - bisa disesuaikan posisinya juga */}
+          <div className="absolute right-0 bottom-0 w-[40vh] h-[40vh] md:w-[70vh] md:h-[70vh] bg-[#FFA673] rounded-full opacity-60 transform translate-x-1/4 translate-y-[5vh] filter blur-[80px] md:blur-[100px] md:mr-40"></div>
 
-          {/* Enlarged photo container with morph-in animation */}
+          {/* Photo container */}
           <div
-            className="relative z-20 w-[60vw] max-w-[300px] sm:max-w-[400px] md:max-w-[600px] h-[30vh] sm:h-[40vh] md:h-[85vh] rounded-full mb-0 md:mb-[-100px] morph-in"
+            className="relative z-20 w-[60vw] max-w-[300px] sm:max-w-[400px] md:max-w-[600px] h-[30vh] sm:h-[40vh] md:h-[90vh] rounded-full mb-0 md:mb-[-120px] morph-in mt-auto"
             style={{ borderRadius: "50%" }}
           >
             <img

@@ -156,42 +156,73 @@ function GalleryAutoScroll({ images }) {
   );
 }
 
-// DATA dummy contoh prestasi
+// DATA PRESTASI BARU berdasarkan foto yang dikirim
 const dataPrestasi = [
   {
-    title: "Juara 1 Lomba Tahfidz Kab. Bogor",
-    desc: "Meraih juara 1 Lomba Tahfidz kategori SD tingkat Kabupaten Bogor pada tahun 2023, mencerminkan dedikasi siswa dan guru dalam membina hafalan Al-Qur'an.",
-    icon: "🏆",
+    title: "MARIYAH AL QIBTIYYAH - Juara 1 Lomba Karate O2SN Tahun 2025",
+    desc: "Mariyah Al Qibtiyyah berhasil meraih juara 1 dalam Lomba Karate O2SN Tahun 2025, menunjukkan prestasi gemilang di bidang olahraga bela diri.",
+    icon: "🥋",
     delay: 0.12,
-    foto: course1,
   },
   {
-    title: "Medali Perak OSN Sains Nasional",
-    desc: "Siswa berhasil meraih medali perak Olimpiade Sains Nasional bidang Matematika pada 2022. Semangat berkompetisi tingkat nasional selalu menjadi motivasi.",
-    icon: "🥈",
+    title: "MAHARDIKA FATTHANDINULLAH - Juara 1 Lomba Cerdas Cermat OSN Tahun 2025",
+    desc: "Mahardika Fatthandinullah meraih juara 1 Lomba Cerdas Cermat OSN Tahun 2025, membuktikan keunggulan akademik siswa SDIT Al Madani.",
+    icon: "🏆",
     delay: 0.19,
-    foto: course2,
   },
   {
-    title: "Juara 2 Kejuaraan Futsal SD",
-    desc: "Mengukir prestasi di bidang olahraga pada kejuaraan futsal antar SD tingkat Provinsi Jawa Barat pada 2023.",
-    icon: "⚽",
+    title: "HIDAYAT - Juara 1 Lomba Cerdas Cermat OSN Tahun 2025",
+    desc: "Hidayat berhasil meraih juara 1 Lomba Cerdas Cermat OSN Tahun 2025, menambah deretan prestasi akademik sekolah di tingkat nasional.",
+    icon: "🏆",
     delay: 0.27,
-    foto: eventImg,
   },
   {
-    title: "Finalis Robotic Nasional",
-    desc: "Tim robotik SDIT Al Madani menjadi finalis Lomba Robotic Nasional tingkat Sekolah Dasar tahun 2021.",
-    icon: "🤖",
+    title: "RADITYA AKMAL AL MUZHAFFAR - Juara 1 Lomba Cerdas Cermat OSN Tahun 2025",
+    desc: "Raditya Akmal Al Muzhaffar meraih juara 1 Lomba Cerdas Cermat OSN Tahun 2025, menunjukkan kemampuan intelektual yang luar biasa.",
+    icon: "🏆",
     delay: 0.35,
-    foto: event3Img,
   },
   {
-    title: "Sekolah Ramah Anak Tingkat Kab.",
-    desc: "Mendapat penghargaan sebagai Sekolah Ramah Anak tingkat Kabupaten Bogor pada tahun 2023.",
-    icon: "🎉",
+    title: "GHITHRIB RIZAL AHSANI - Juara 1 Lomba Maca Jeung Nulis Basa Sunda",
+    desc: "Ghithrib Rizal Ahsani berhasil meraih juara 1 dalam Lomba Maca Jeung Nulis Basa Sunda, melestarikan budaya lokal melalui prestasi.",
+    icon: "📝",
     delay: 0.42,
-    foto: dzikirImg,
+  },
+  {
+    title: "MUHAMMAD ZEMA ADZKIA JABBAR - Juara 1 Lomba MHO Kecamatan 2025",
+    desc: "Muhammad Zema Adzkia Jabbar meraih juara 1 Lomba MHO Kecamatan 2025, menunjukkan bakat dan kemampuan di bidang tersebut.",
+    icon: "⭐",
+    delay: 0.50,
+  },
+  {
+    title: "ALVINA PUTRI SETIAWAN - Juara 2 Lomba Karate OSN Tahun 2025",
+    desc: "Alvina Putri Setiawan berhasil meraih juara 2 Lomba Karate OSN Tahun 2025, membuktikan ketangguhan di bidang olahraga bela diri.",
+    icon: "🥈",
+    delay: 0.58,
+  },
+  {
+    title: "SAHIRA PUTRI RAMADANIZA - Juara 2 Lomba MHO Kecamatan 2025",
+    desc: "Sahira Putri Ramadaniza meraih juara 2 Lomba MHO Kecamatan 2025, menunjukkan prestasi yang membanggakan di tingkat kecamatan.",
+    icon: "⭐",
+    delay: 0.65,
+  },
+  {
+    title: "KHUBAIB AL ARSYAD - Juara 3 Lomba Karate OSN Tahun 2025",
+    desc: "Khubaib Al Arsyad berhasil meraih juara 3 Lomba Karate OSN Tahun 2025, menambah koleksi medali sekolah di bidang olahraga.",
+    icon: "🥉",
+    delay: 0.72,
+  },
+  {
+    title: "MUHAMMAD ZEMI REZKY - Juara 3 Lomba MTO Kecamatan Tahun 2025",
+    desc: "Muhammad Zemi Rezky meraih juara 3 Lomba MTO Kecamatan Tahun 2025, menunjukkan kemampuan kompetitif di tingkat daerah.",
+    icon: "🏅",
+    delay: 0.80,
+  },
+  {
+    title: "MUHAMMAD FARID ROHMAT - Juara 3 Lomba MTO Kecamatan Tahun 2025",
+    desc: "Muhammad Farid Rohmat berhasil meraih juara 3 Lomba MTO Kecamatan Tahun 2025, membuktikan konsistensi prestasi siswa SDIT Al Madani.",
+    icon: "🏅",
+    delay: 0.87,
   }
 ];
 
@@ -232,14 +263,8 @@ export default function Prestasi() {
       <section className="max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto mt-8 sm:mt-12 mb-8 sm:mb-12 animate-sectionIn">
         {dataPrestasi.map((p, idx) => (
           <CardAnim key={idx} title={p.title} delay={p.delay} icon={p.icon}>
-            <div className="flex gap-3 items-center">
-              <img
-                src={p.foto}
-                alt={p.title}
-                className="w-16 h-12 sm:w-20 sm:h-16 object-cover rounded-xl shadow-md border-2 border-[#e0eae2] transition-transform duration-700 hover:scale-105"
-                loading="lazy"
-              />
-              <span>{p.desc}</span>
+            <div className="text-gray-700">
+              {p.desc}
             </div>
           </CardAnim>
         ))}

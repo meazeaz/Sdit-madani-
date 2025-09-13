@@ -86,17 +86,15 @@ export default function Navbar() {
 
         {/* Buttons Desktop */}
         <div className="hidden md:flex items-center gap-6 z-30">
-          <button
-            className="flex items-center gap-1 text-[#1A2B3B] font-medium transition-all duration-300 select-none"
+          
+          <a href="https://wa.me/6285155139392" target="_blank" rel="noopener noreferrer">
+            <button className="bg-[#1A2B3B] text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-[#222] hover:text-[#F8D49A] transition-all duration-300 select-none"
             onMouseEnter={(e) => (e.currentTarget.style.color = "#F8D49A")}
-            onMouseLeave={(e) => (e.currentTarget.style.color = "#1A2B3B")}
-          >
-            <FontAwesomeIcon icon={faUserCircle} size="lg" />
-            Login
-          </button>
-          <button className="bg-[#1A2B3B] text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-[#222] transition-all duration-300 select-none">
-            Get In Touch
-          </button>
+            
+            >
+              Get In Touch
+            </button>
+          </a>
         </div>
       </nav>
 

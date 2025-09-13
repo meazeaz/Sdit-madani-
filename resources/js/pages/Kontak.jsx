@@ -91,15 +91,15 @@ export default function Kontak() {
                 <i className="fa fa-envelope"></i>📧
               </span>
               <span className="text-xs text-gray-500 mb-1">Email</span>
-              <b className="text-[#019164] text-base">info@sditmadani.org</b>
+              <b className="text-[#019164] text-base">sditmadani@yahoo.com</b>
             </div>
           </CardAnim>
           <CardAnim delay={0.18}>
             <div className="flex flex-col items-center text-center">
               <span className="rounded-full bg-gradient-to-br from-[#ffb55c]/80 to-[#ef262c]/80 text-white w-12 h-12 flex items-center justify-center text-2xl mb-2 shadow-lg">☎️</span>
               <span className="text-xs text-gray-500 mb-1">Telepon</span>
-              <b className="text-[#ef262c] text-base">+6221 5426 0919</b>
-              <span className="text-xs mt-1 text-gray-700">WA SDIT: 0896-2579-4890<br />WA SMPIT/PP: 0813-1478-4263</span>
+              <b className="text-[#ef262c] text-base">0851-5513-9392</b>
+              <span className="text-xs mt-1 text-gray-700">WA SDIT: 0851-5513-9392</span>
             </div>
           </CardAnim>
           <CardAnim delay={0.26}>
@@ -151,7 +151,7 @@ export default function Kontak() {
               className="rounded-full px-8 py-2 mt-1 mx-auto bg-gradient-to-r from-[#019164] to-[#2E7D32] text-white font-semibold text-base shadow hover:scale-105 hover:brightness-110 transition-all"
             >Kirim Pesan</button>
           </form>
-          {success && <div className="mt-3 text-green-600 font-bold text-center animate-fadeIn">Pesan berhasil terkirim!</div>}
+          {success && <div className="mt-3 text-green-600 font-bold text-center animate-fadeIn">Pesan berhasil terkirim! <br />Terimakasih Atas Masukkan Yang Anda Kirim!!</div>}
         </CardAnim>
       </section>
 

@@ -6,7 +6,7 @@ import { faTrophy } from "@fortawesome/free-solid-svg-icons";
 
 
 export default function Hero() {
-  const typingText = "Terampil Mandiri Qur'ani.";
+  const typingText = "Membentuk Generasi Unggul, Rabbani, Berwawasan Global";
   const [displayedText, setDisplayedText] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [prestasi, setPrestasi] = useState(1); // mulai dari 1
@@ -169,7 +169,7 @@ export default function Hero() {
             SDIT MADANI <br  className="hidden md:block" />
             Parung Panjang<br className="hidden md:block" />
             <div className="h-6 md:h-10" /> {/* Spacer */}
-            <span className="text-gray-500 font-bold inline-block text-2xl md:text-7xl lg:text-7xl tracking-wider mt-4 md:mt-8 relative md:top-[-1rem]">
+            <span className="text-gray-500 font-bold inline-block text-2xl md:text-5xl lg:text-5xl tracking-wider mt-4 md:mt-8 relative md:top-[-1rem]">
               {displayedText}
               <span className="blinking-cursor">|</span>
             </span>
@@ -177,18 +177,21 @@ export default function Hero() {
 
           <p className="text-sm sm:text-base md:text-xl text-gray-700 max-w-md md:max-w-lg fade-in-slide-up text-justify">
             Jadilah bagian dari SDIT Madani, tempat anak-anak tumbuh menjadi Sholih, Cerdas, Mandiri, dan berakhlaq mulia. Kami hadir untuk membentuk generasi yang mampu 
-            membaca dan menghafal Al-Qur'an dengan baik serta meraih prestasi. Daftarkan putra-putri Anda di Penerimaan Peserta Didik Baru SDIT Madani, Full Day School di Parungpanjang, Bogor, untuk Tahun Pelajaran 2025/2026!
-          </p>
+            membaca dan menghafal Al-Qur'an dengan baik serta meraih prestasi.</p>
+            
+            <p className="text-sm sm:text-base md:text-xl text-gray-700 max-w-md md:max-w-lg fade-in-slide-up text-justify">
+              Daftarkan putra-putri Anda di Penerimaan Peserta Didik Baru SDIT Madani, Full Day School di Parungpanjang, Bogor, untuk Tahun Pelajaran 2026/2027!</p>
+          
 
-          {/* First button with margin bottom */}
-          <button className="bg-[#E9FF3C] hover:bg-[#d9ef2a] transition-all duration-300 border-2 border-black text-[#1A2B3B] px-5 sm:px-6 py-2 sm:py-3 md:px-8 md:py-4 rounded-full font-bold text-xs sm:text-sm md:text-base button-scale-hover mb-4">
-            Hubungi Kami
-          </button> 
+            <div className="flex flex-row gap-6">
+              <button className="bg-[#E9FF3C] hover:bg-[#d9ef2a] transition-all duration-300 border-2 border-black text-[#1A2B3B] px-6 py-3 rounded-full font-bold text-sm button-scale-hover">
+                Hubungi Kami
+              </button>
+              <button className="bg-[#E9FF3C] hover:bg-[#d9ef2a] transition-all duration-300 border-2 border-black text-[#1A2B3B] px-6 py-3 rounded-full font-bold text-sm button-scale-hover">
+                Daftar Sekarang
+              </button>
+            </div>
 
-          {/* Second button with additional margin-top to ensure separation */}
-          <button className="bg-[#E9FF3C] hover:bg-[#d9ef2a] transition-all duration-300 border-2 border-black text-[#1A2B3B] px-5 sm:px-6 py-2 sm:py-3 md:px-8 md:py-4 rounded-full font-bold text-xs sm:text-sm md:text-base button-scale-hover mt-4">
-            Daftar Sekarang
-          </button>
         </div>
 
 
@@ -210,28 +213,30 @@ export default function Hero() {
           </div>
 
           {/* Trophy badge - Prestasi */}
-            <div className="absolute left-[10%] sm:left-[15%] top-[85%] md:left-[75%] md:top-[35%] lg:left-[70%] lg:top-[25%] transform -translate-y-1/2 bg-white border-4 border-[#FFA673] rounded-full p-2 sm:p-3 md:p-4 z-30 fade-in-slide-up shadow-lg">
-              <div className="flex flex-col items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-                <FontAwesomeIcon icon={faTrophy} className="text-[#FFA673] w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 mb-1" />
+            <div className="absolute left-[10%] sm:left-[15%] top-[85%] md:left-[75%] md:top-[35%] lg:left-[70%] lg:top-[25%] transform -translate-y-1/2 bg-yellow-100 border-4 border-[#FFA673] rounded-full p-4 sm:p-5 md:p-6 z-30 fade-in-slide-up shadow-lg">
+              {/* Perhatikan p-4 sm:p-5 md:p-6 dan w-16 h-16, sm:w-20 sm:h-20, md:w-24 md:h-24 */}
+              <div className="flex flex-col items-center justify-center w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24">
+                {/* Perhatikan w-10 h-10, sm:w-12 sm:h-12, md:w-14 md:h-14 */}
+                <FontAwesomeIcon icon={faTrophy} className="text-[#FFA673] w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 mb-1" />
                 <div className="flex items-end">
-                  <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#FFA673]">{prestasi}</span>
-                  <span className="text-[#FFA673] text-base sm:text-lg md:text-xl font-bold ml-1">+</span>
+                  {/* Perhatikan text-xl, sm:text-2xl, md:text-3xl */}
+                  <span className="text-xl sm:text-2xl md:text-3xl font-bold text-[#B12C00]">{prestasi}+</span>
                 </div>
-                <span className="text-[8px] sm:text-[9px] md:text-xs text-gray-600 mt-1">Prestasi</span>
+                {/* Perhatikan ukuran text mungkin也需要 disesuaikan, misalnya text-xs */}
+                <span className="text-xs sm:text-sm md:text-base text-gray-600 mt-1 font-bold">Prestasi</span>
               </div>
             </div>
 
 
           {/* Rating badge - Mobile positioning */}
-          <div className="absolute right-[10%] sm:right-[15%] top-[85%] md:right-[75%] md:top-[90%] lg:right-[80%] lg:top-[95%] transform -translate-y-1/2 bg-white border-4 border-[#E9FF3C] rounded-full p-2 sm:p-3 md:p-4 z-30 fade-in-slide-up">
-            <div className="flex flex-col items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16">
-              <span className="text-[8px] sm:text-[9px] md:text-xs text-gray-600 ml-1">Akreditasi</span>
-              <div className="flex items-center">
-                <span className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800">A</span>
-                <span className="text-yellow-400">★</span>
+          <div className="absolute right-[10%] sm:right-[15%] top-[85%] md:right-[75%] md:top-[90%] lg:right-[80%] lg:top-[95%] transform -translate-y-1/2 bg-white border-4 border-[#E9FF3C] rounded-full p-3 sm:p-4 md:p-5 z-30 fade-in-slide-up">
+            <div className="flex flex-col items-center justify-center w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20">
+              <span className="text-[10px] sm:text-[11px] md:text-xs text-gray-600 font-bold">Akreditasi</span>
+              <div className="flex items-center mt-1">
+                <span className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800">A</span>
               </div>
             </div>
-          </div>        
+          </div> 
         </div>
       </div>
 

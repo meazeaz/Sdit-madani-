@@ -40,13 +40,11 @@ const dataSekolah = {
   nama: "SDIT Al Madani",
   yayasan: "Yayasan Islamic Center Al Madany",
   alamat: "Jl. Madani, Perumnas 2, Parungpanjang, Kabupaten Bogor, Jawa Barat 16360",
-  email: "Info@sditmadani.org",
-  telepon: "+6221 54260919",
-  tahunBerdiri: 2009,
-  kepalaSekolah: "Ustadzah Siti Nurhalimah, S.Pd.I",
+  email: "sditmadani@yahoo.com",
+  telepon: "0851-5513-9392",
+  kepalaSekolah: "Yazid S.Pd",
   akreditasi: "A (Unggul)",
-  jumlahSiswa: 420,
-  jumlahGuru: 35,
+
   kurikulum: [
     "Kurikulum Nasional (Kurikulum Merdeka)",
     "Kurikulum Keislaman Terpadu",
@@ -66,17 +64,19 @@ const dataSekolah = {
     "Kelas Tahfidz Eksklusif",
   ],
   ekstrakurikuler: [
-    "Tahfidz Al-Qur'an",
-    "Pramuka",
-    "English Club",
-    "Robotik",
-    "Futsal",
-    "Basket",
-    "Panahan",
-    "Kaligrafi",
-    "Karya Ilmiah Remaja",
-    "Jurnalistik",
-    "Seni Musik & Tari",
+  "Karate",
+  "Futsal", 
+  "Voli",
+  "Badminton",
+  "Tenis Meja",
+  "Memanah",
+  "Renang",
+  "Pramuka",
+  "Melukis",
+  "Seni Tari",
+  "Komputer",
+  "Dokter Kecil",
+  "Takhosus"
   ],
 };
 
@@ -248,13 +248,11 @@ export default function Profil() {
           <li><b>Nama Sekolah:</b> {dataSekolah.nama}</li>
           <li><b>Yayasan:</b> {dataSekolah.yayasan}</li>
           <li><b>Kepala Sekolah:</b> {dataSekolah.kepalaSekolah}</li>
-          <li><b>Tahun Berdiri:</b> {dataSekolah.tahunBerdiri}</li>
           <li><b>Akreditasi:</b> {dataSekolah.akreditasi}</li>
           <li><b>Alamat:</b> {dataSekolah.alamat}</li>
           <li><b>Email:</b> {dataSekolah.email}</li>
           <li><b>Telepon:</b> {dataSekolah.telepon}</li>
-          <li><b>Jumlah Siswa:</b> {dataSekolah.jumlahSiswa} siswa</li>
-          <li><b>Jumlah Guru & Staff:</b> {dataSekolah.jumlahGuru} orang</li>
+
         </ul>
         <div className="mt-4 sm:mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-8">
           <div>
@@ -280,15 +278,14 @@ export default function Profil() {
       <section className="max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto mt-3 sm:mt-8 mb-8 sm:mb-12 animate-sectionIn">
         <CardAnim title="Visi" delay={0.2}>
           <p>
-            Membentuk generasi Qur'ani, berakhlak mulia, berprestasi, cerdas, mandiri dan berwawasan global berlandaskan nilai-nilai Islam.
-          </p>
+        Menjadi lembaga pendidikan unggul, profesional, dan bertaraf nasional dalam membentuk generasi rabbani          </p>
         </CardAnim>
         <CardAnim title="Misi" delay={0.35}>
           <ol className="list-decimal ml-5">
-            <li>Menyelenggarakan pendidikan berbasis tauhid, Al-Qur’an dan Sunnah.</li>
-            <li>Mengembangkan lingkungan belajar yang Islami, kreatif dan Inovatif.</li>
-            <li>Mendorong potensi dan bakat siswa secara optimal melalui kegiatan akademik dan non-akademik.</li>
-            <li>Menanamkan karakter kepemimpinan, kepedulian sosial dan tanggung jawab lingkungan.</li>
+            <li>Mewujudkan keunggulan akademik & non-akademik berbasis STEM dan literasi digital.</li>
+            <li>Membangun SDM profesional melalui pelatihan guru dan manajemen berbasis teknologi.</li>
+            <li>Memenuhi standar nasional dengan kurikulum integratif dan fasilitas modern. </li>
+            <li>Membentuk generasi rabbani melalui pembiasaan ibadah, akhlak Qurani, dan parenting islami.</li>
           </ol>
         </CardAnim>
         <CardAnim title="Tujuan" delay={0.5}>

@@ -3,6 +3,10 @@ import ppdbBanner from "../assets/ppdb.png";
 import { useNavigate } from "react-router-dom";
 import bgNoise from "../assets/bg.png";
 import logo from "../assets/logo.png";
+import ppdb1 from "../assets/1.png";
+import ppdb2 from "../assets/2.png";
+import ppdb3 from "../assets/3.png";
+import ppdb4 from "../assets/4.png";
 
 // Intersection observer animasi
 function useSectionInView(options = {}) {
@@ -60,18 +64,27 @@ export default function PPDB() {
           className="mx-auto w-16 h-16 sm:w-24 sm:h-24 mb-3 z-10 animate-dropIn"
         />
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-bold text-[#176324] mb-2 z-10 animate-dropIn text-center px-2 shadow-sm">
-          PPDB 2025/2026 — SDIT-SMPIT-Ponpes Al-Qur'an
+          PPDB 2026/2027 — SDIT-SMPIT-Ponpes Al-Qur'an
         </h1>
         <p className="text-base sm:text-lg text-gray-700 max-w-xl mx-auto z-10 animate-fadeIn text-center px-3 font-semibold mb-4">
           Dibuka! <span className="text-[#019164]">Penerimaan Peserta Didik Baru</span>
-          Tahun Ajaran <b>2025/2026</b> di bawah YIC AL Madany
+          Tahun Ajaran <b>2026/2027</b> di bawah YIC AL Madany
         </p>
-        <img
-          src={ppdbBanner}
-          alt="Poster PPDB 2025 SDIT SMPIT Ponpes Madani"
-          className="rounded-xl object-cover w-full max-w-lg shadow-2xl border-4 border-white animate-bounceIn"
-          loading="lazy"
-        />
+        {/* Gambar PPDB lebih besar dan ada jarak */}
+        <div className="flex flex-row justify-center items-center gap-8 mt-4 mb-2 w-full">
+          <img
+            src={ppdb1}
+            alt="Poster PPDB 2025 SDIT SMPIT Ponpes Madani"
+            className="rounded-xl object-cover w-full max-w-xl h-auto shadow-2xl border-4 border-white animate-bounceIn"
+            loading="lazy"
+          />
+          <img
+            src={ppdb2}
+            alt="Poster PPDB 2025 SDIT SMPIT Ponpes Madani"
+            className="rounded-xl object-cover w-full max-w-xl h-auto shadow-2xl border-4 border-white animate-bounceIn"
+            loading="lazy"
+          />
+        </div>
       </section>
 
       {/* Info/Highlight PPDB */}
@@ -133,27 +146,16 @@ export default function PPDB() {
             <div className="flex items-center gap-2">
               <span className="text-[#2E7D32] font-bold">SDIT:</span>
               <a
-                href="https://wa.me/6289625794890"
+                href="https://wa.me/6285155139392"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline hover:text-[#019164] font-medium transition-colors"
                 title="Chat SDIT Madani"
               >
-                0896-2579-4890
+                0851-5513-9392
               </a>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-[#2E7D32] font-bold">SMPIT & Ponpes:</span>
-              <a
-                href="https://wa.me/6281314784263"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-[#019164] font-medium transition-colors"
-                title="Chat SMPIT/Ponpes Madani"
-              >
-                0813-1478-4263
-              </a>
-            </div>
+            
             <div className="flex items-center gap-2 mt-2">
               <span className="text-xl">📲</span>
               <span className="text-gray-600">heylink.me/madaniku</span>

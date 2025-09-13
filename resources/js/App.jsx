@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import Profil from './pages/profil'; // Pastikan file ini sudah dibuat
+import Profil from './pages/Profil.jsx'; // Pastikan file ini sudah dibuat
 import Prestasi from './pages/Prestasi'; // Pastikan file ini sudah dibuat
 import Ppdb from './pages/Ppdb'; // Pastikan file ini sudah dibuat
 import Artikel from './pages/Artikel'; // Pastikan file ini sudah dibuat
